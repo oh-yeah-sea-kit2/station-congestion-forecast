@@ -1,0 +1,44 @@
+version: '3'
+services:
+  golang:
+    build: ./golang
+    volumes:
+      - ./golang/src/api:/go/src/api
+    ports:
+      - "1333:1333"
+    depends_on:
+      - db
+    environment:
+      ENVIRONMENT: local
+    # command: bash -c "pwd && which realize && realize -v && realize start --name='server.go' --path='./api/app/' --run"
+    # command: /root/.goenv/shims/go run /go/src/api/app/server.go
+    tty: true
+  db:
+    build: ./postgres
+    ports:
+      - "5555:5432"
+    # station_congestion_forecast
+    environment:
+      - POSTGRES_USER=STATION_CONGESTION_FORECAST
+      - POSTGRES_PASSWORD=station_congestion_forecast
+      - POSTGRES_DB=STATION_CONGESTION_FORECAST_DATA
+    volumes:
+      - "./postgres/init_sql:/docker-entrypoint-initdb.d"
+  pgweb:
+    image: sosedoff/pgweb
+    container_name: "pgweb"
+    ports:
+      - "8081:8081"
+    environment:
+      - DATABASE_URL=postgres://STATION_CONGESTION_FORECAST:station_congestion_forecast@db:5432/STATION_CONGESTION_FORECAST_DATA?sslmode=disable
+  python:
+    build: ./python
+    volumes:
+      - ./python/src/app:/root/app
+    ports:
+      - 8888:8000
+    environment:
+      - DATABASE_URL=postgres://STATION_CONGESTION_FORECAST:station_congestion_forecast@db:5432/STATION_CONGESTION_FORECAST_DATA?sslmode=disable
+    depends_on:
+      - db
+    tty: true

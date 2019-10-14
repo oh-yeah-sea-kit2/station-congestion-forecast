@@ -1,0 +1,10 @@
+Date: Mon, 14 Oct 2019 08:51:39 GMT
+Server: Apache
+Set-Cookie: mp_session_id=7fb20b7f70e93d8196010be9d7a70a689583ce69bd01cd5f774ae4c747b351654bd487b908a329fa; domain=m-messe.co.jp; path=/; HttpOnly
+X-Content-Type-Options: nosniff
+X-Xss-Protection: 1; mode=block
+X-Frame-Options: SAMEORIGIN
+Vary: Accept-Encoding,User-Agent
+Content-Encoding: gzip
+Strict-Transport-Security: max-age=315360000
+Content-Type: text/html

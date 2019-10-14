@@ -1,0 +1,35 @@
+@startuml
+
+title シーケンス図
+
+box "WWW" #LightBlue
+  participant "WWW" as internet
+end box
+
+box "駅混雑通知システム" #LightSkyBlue
+  participant "LINE@通知アプリ" as app
+  participant "駅イベントAPI" as api
+  participant "スクレイピングAPP" as appdb
+  participant "データベース" as db
+end box
+
+box "LINE" #LightGreen
+  participant "LINE@bot" as line
+end box
+
+activate appdb
+internet <-> appdb : インターネットよりデータ取得
+appdb -> db : スクレイピング結果を格納
+deactivate appdb
+
+activate app
+activate api
+app -> app : 1時間に一度起動
+app -> api : 駅イベント情報をリクエスト
+api <-> db : 駅イベント情報をselect
+app <- api : 駅イベント情報をレスポンス
+deactivate api
+app -> line : LINE botへ通知
+deactivate app
+
+@enduml

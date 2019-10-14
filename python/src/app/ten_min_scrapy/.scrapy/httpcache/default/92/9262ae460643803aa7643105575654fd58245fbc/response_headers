@@ -1,0 +1,9 @@
+Date: Mon, 14 Oct 2019 08:12:02 GMT
+Set-Cookie: __cfduid=d1ec0566cc0204f03d9ac620f7a683fbf1571040722; expires=Tue, 13-Oct-20 08:12:02 GMT; path=/; domain=.blog.scrapinghub.com; HttpOnly
+Set-Cookie: __cfruid=97fb2634d2253b926b615939503f96addaa8dfca-1571040722; path=/; domain=.blog.scrapinghub.com; HttpOnly
+Location: https://blog.scrapinghub.com/robots.txt
+Cache-Control: s-maxage=3600,max-age=120
+X-Hs-Https-Only: worker
+Vary: Accept-Encoding
+Server: cloudflare
+Cf-Ray: 52581604195ddb20-KIX
