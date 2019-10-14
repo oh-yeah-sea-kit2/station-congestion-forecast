@@ -29,4 +29,6 @@
 
 
 ## scrapy shell
+- scrapy shell
 - fetch("https://www.marines.co.jp/game/schedule/201909/index.html")
+- response.css('div.eventTopics > div').extract_first()
