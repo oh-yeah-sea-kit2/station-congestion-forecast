@@ -21,7 +21,7 @@ echo "Realize installed @: $RV"
 # export GO111MODULE=on
 
 which realize
-goenv global 1.9.5
+goenv global 1.11.4
 go version
 cd /go/src
 pwd

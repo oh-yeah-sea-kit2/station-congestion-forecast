@@ -16,6 +16,7 @@ ENV PATH $PATH:/usr/local/go/bin:$GOPATH/bin
 
 RUN ~/.goenv/bin/goenv install 1.9.5
 RUN ~/.goenv/bin/goenv install 1.10.7
+RUN ~/.goenv/bin/goenv install 1.11.4
 RUN ~/.goenv/bin/goenv global 1.10.7
 
 WORKDIR /go/src
