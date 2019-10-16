@@ -1,5 +1,8 @@
 # station-congestion-forecast
-システムイメージ図
+# 概要
+- 海浜幕張駅の周辺のイベント情報より、混雑予想を行いLINEで通知を行うシステム
+
+# システムイメージ図
 ![シーケンス図](./doc/シーケンス図.png)
 
 ## Station congestion forecast API
