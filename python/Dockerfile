@@ -17,5 +17,9 @@ RUN yum install -y gcc zlib-devel bzip2 bzip2-devel readline readline-devel sqli
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv && \
     echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 
+RUN source ~/.bashrc
+RUN pyenv install anaconda3-5.3.1
+RUN pyenv global anaconda3-5.3.1
+
 COPY ./endpoint.sh /root/
-CMD ["/root/endpoint.sh"]
+# CMD ["/root/endpoint.sh"]

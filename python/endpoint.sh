@@ -1,10 +1,9 @@
 echo "Start script 'endpoint.sh'"
-source ~/.bashrc
+# source ~/.bashrc
+# pyenv install anaconda3-5.3.1
+# pyenv global anaconda3-5.3.1
 
-cd ~/
-pyenv install anaconda3-5.3.1
-pyenv global anaconda3-5.3.1
-
+cd ~
 pip install --upgrade pip
 pip install scrapy
 

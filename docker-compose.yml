@@ -2,6 +2,7 @@ version: '3'
 services:
   golang:
     build: ./golang
+    container_name: scf_golang
     volumes:
       - ./golang/src/api:/go/src/api
     ports:
@@ -15,6 +16,7 @@ services:
     tty: true
   db:
     build: ./postgres
+    container_name: scf_db
     ports:
       - "5555:5432"
     # station_congestion_forecast
@@ -26,13 +28,14 @@ services:
       - "./postgres/init_sql:/docker-entrypoint-initdb.d"
   pgweb:
     image: sosedoff/pgweb
-    container_name: "pgweb"
+    container_name: "scf_pgweb"
     ports:
       - "8081:8081"
     environment:
       - DATABASE_URL=postgres://STATION_CONGESTION_FORECAST:station_congestion_forecast@db:5432/STATION_CONGESTION_FORECAST_DATA?sslmode=disable
   python:
     build: ./python
+    container_name: scf_python
     volumes:
       - ./python/src/app:/root/app
     ports:

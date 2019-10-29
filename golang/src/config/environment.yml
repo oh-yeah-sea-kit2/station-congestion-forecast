@@ -1,0 +1,15 @@
+environment:
+  db:
+    connection: host=db port=5432 user=STATION_CONGESTION_FORECAST password=station_congestion_forecast dbname=STATION_CONGESTION_FORECAST_DATA sslmode=disable
+  
+  log:
+    level: debug
+    stdout: true
+
+  cache:
+    jma_lfm_images:
+      size: 1000
+      expiration: 21600
+      cleanup: 1
+      enable: true
+
